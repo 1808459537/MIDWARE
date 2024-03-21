@@ -1,0 +1,7 @@
+server:
+  port: 8081
+
+# 白名单用户
+zht:
+  whitelist:
+    users: aaa,111,zht
