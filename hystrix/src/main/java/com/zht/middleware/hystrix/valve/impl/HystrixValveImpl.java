@@ -25,7 +25,6 @@ public class HystrixValveImpl extends HystrixCommand<Object> implements IValveSe
     }
 
 
-
     @Override
     protected Object run() throws Exception {
         try{
@@ -53,6 +52,6 @@ public class HystrixValveImpl extends HystrixCommand<Object> implements IValveSe
         /*
             JSON.parseObject() 方法，将返回的 JSON 字符串作为第一个参数传入，并使用 method.getReturnType() 方法获取的返回类型作为第二个参数，以指示 FastJSON 库应该将 JSON 数据解析为什么类型的对象。
          */
-        return JSON.parseObject(doHystrix.returnJosn(),method.getReturnType());
+        return JSON.parseObject(doHystrix.returnJosn(), method.getReturnType());
     }
 }

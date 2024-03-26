@@ -20,7 +20,7 @@ public class DoHystrixPoint {
     @Pointcut("@annotation(com.zht.middleware.hystrix.annotation.DoHystrix)")
     public void doPoint(){}
 
-    @Around("doPoint() && @annotation(doGovern)")
+    @Around("doPoint() && @annotation(doGovern)") // 这个doGovern就是拿到了切面方法的注解，就不用在method.getAnnotation了
     public Object doRouter(ProceedingJoinPoint jp, DoHystrix doGovern) throws Throwable {
         IValveService valveService = new HystrixValveImpl();
         return valveService.access(jp, getMethod(jp), doGovern, jp.getArgs());

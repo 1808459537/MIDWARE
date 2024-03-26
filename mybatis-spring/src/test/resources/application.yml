@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+# mybatis
+mybatis:
+  datasource:
+    username: root
+    password: asmin
+    url: jdbc:mysql://127.0.0.1:3306/zhtstack?useUnicode=true
+    driver: com.mysql.jdbc.Driver
+    basePackage: com.zht.middleware.mybatisspring.dao

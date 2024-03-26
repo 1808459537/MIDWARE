@@ -1,0 +1,15 @@
+<mapper namespace="com.zht.middleware.dao.IUserDao">
+
+    <select id="queryUserInfoById" parameterType="java.lang.Long" resultType="com.zht.middleware.po.User">
+        SELECT id, userId, userNickName, userHead, userPassword, createTime
+        FROM user
+        where id = #{id}
+    </select>
+
+    <select id="queryUserList" parameterType="com.zht.middleware.po.User" resultType="com.zht.middleware.po.User">
+        SELECT id, userId, userNickName, userHead, userPassword, createTime, updateTime
+        FROM user
+        where userNickName = #{userNickName}
+    </select>
+
+</mapper>
